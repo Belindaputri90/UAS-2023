@@ -27,8 +27,8 @@ $query = $conn->query("SELECT * FROM postings");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   </head>
 <body>
-
-<!-- NAVBAR -->
+    
+  <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
       <div class="container-fluid">
         <!-- <a class="navbar-brand">KELOMPOK 1</a> -->
@@ -57,7 +57,7 @@ $query = $conn->query("SELECT * FROM postings");
             </div>
           </div>
         </div>
-        
+
         <div class="collapse navbar-collapse justify-content-end">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -68,19 +68,19 @@ $query = $conn->query("SELECT * FROM postings");
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" href="senti.php">Table Komentar</a>
+              <a class="nav-link" href="senti.php">Table Komentar</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="tablePosting.php">Table Posting</a>
+              <a class="nav-link active" href="tablePosting.php">Table Posting</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-<!-- NAVBAR -->
+  <!-- NAVBAR -->
 
-    <div class="container my-5">
+<div class="container my-5">
         <div class="row">
             <div class="col-12">
                 <a href="index.php" class="btn btn-primary mt-5">Kembali</a>
@@ -90,28 +90,28 @@ $query = $conn->query("SELECT * FROM postings");
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col" class="w-25">ID Posting</th>
-                                <th scope="col">Komentar</th>
+                                <th scope="col">Posting</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php 
-                                $query = $conn->query("SELECT * FROM komentars");
+                                $query = $conn->query("SELECT * FROM postings");
                                 $i=1;
                                 while ($row = $query->fetch_assoc()) {
                                     
                             ?>
                                 <tr>
                                     <td><?php echo $i++; ?></td>
-                                    <td><?php echo $row['idposting']; ?></td>
-                                    <td><?php echo $row['komentar']; ?></td>
+                                    <td><?php echo $row['id']; ?></td>
+                                    <td><?php echo $row['posting']; ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
                     </table>
             </div>
         </div>
-    </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
